@@ -28,5 +28,5 @@ Time spent: 10-12 hours
 
 ### Walkthrough
 
-![Video Walkthrough](...)
+![Video Walkthrough](https://github.com/usumeet/TwitterDemo/blob/master/Twitter/TwitterDemo.gif)
 
