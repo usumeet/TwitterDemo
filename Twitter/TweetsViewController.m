@@ -52,6 +52,10 @@
     //[self presentViewController:[[LoginViewController alloc] init] animated:YES completion:nil];
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.tableView reloadData];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
