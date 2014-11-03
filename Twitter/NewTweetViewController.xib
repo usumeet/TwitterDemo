@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NewTweetViewController">
+            <connections>
+                <outlet property="inputTextView" destination="Or4-Hv-ULg" id="jDg-6D-eKt"/>
+                <outlet property="nameLabel" destination="wZl-tA-29s" id="geL-6k-hC0"/>
+                <outlet property="posterView" destination="8fW-ds-cPq" id="Fog-qC-ge2"/>
+                <outlet property="screennameLabel" destination="Zky-BC-00Q" id="cVp-KP-E5d"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8fW-ds-cPq">
+                    <rect key="frame" x="8" y="86" width="108" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="108" id="dRh-Fk-1eu"/>
+                        <constraint firstAttribute="height" constant="66" id="icj-Jn-EUl"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sumeet Ungratwar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wZl-tA-29s">
+                    <rect key="frame" x="124" y="86" width="144" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@sumeet_mu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zky-BC-00Q">
+                    <rect key="frame" x="124" y="115" width="103" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Or4-Hv-ULg">
+                    <rect key="frame" x="8" y="166" width="582" height="424"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="8fW-ds-cPq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="467-se-7ma"/>
+                <constraint firstItem="Or4-Hv-ULg" firstAttribute="top" secondItem="8fW-ds-cPq" secondAttribute="bottom" constant="14" id="PKs-39-JFe"/>
+                <constraint firstItem="Or4-Hv-ULg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="8" id="RkX-UE-mFl"/>
+                <constraint firstItem="wZl-tA-29s" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="Ui0-Hk-4ME"/>
+                <constraint firstItem="wZl-tA-29s" firstAttribute="leading" secondItem="8fW-ds-cPq" secondAttribute="trailing" constant="8" id="eSY-eM-dj8"/>
+                <constraint firstItem="Zky-BC-00Q" firstAttribute="top" secondItem="wZl-tA-29s" secondAttribute="bottom" constant="8" id="jbR-24-p3Q"/>
+                <constraint firstItem="8fW-ds-cPq" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="86" id="lZf-IW-mzf"/>
+                <constraint firstAttribute="trailing" secondItem="Or4-Hv-ULg" secondAttribute="trailing" constant="10" id="nG1-f5-YF0"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="wZl-tA-29s" secondAttribute="trailing" constant="10" id="oQi-Hb-fqc"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Zky-BC-00Q" secondAttribute="trailing" constant="10" id="rwm-lX-Cdg"/>
+                <constraint firstAttribute="bottom" secondItem="Or4-Hv-ULg" secondAttribute="bottom" constant="10" id="wRF-g1-SUJ"/>
+                <constraint firstItem="Zky-BC-00Q" firstAttribute="leading" secondItem="8fW-ds-cPq" secondAttribute="trailing" constant="8" id="zIj-NH-pKS"/>
+            </constraints>
+            <point key="canvasLocation" x="419" y="200"/>
+        </view>
+    </objects>
+</document>
