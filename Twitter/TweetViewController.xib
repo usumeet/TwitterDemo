@@ -8,10 +8,12 @@
             <connections>
                 <outlet property="createdAtLabel" destination="w5w-7g-xLC" id="FEs-Sr-Fsz"/>
                 <outlet property="descriptionLabel" destination="iky-oA-93y" id="Fsh-Ib-Dhv"/>
+                <outlet property="favoriteButton" destination="IaD-Md-qFh" id="JPc-J8-Jok"/>
                 <outlet property="favouritesCountLabel" destination="UHz-Mi-dar" id="ise-th-t7y"/>
                 <outlet property="nameLabel" destination="XTA-6A-jlm" id="Hmt-ag-9mp"/>
                 <outlet property="posterView" destination="hXs-Of-D86" id="tM2-t3-BpT"/>
                 <outlet property="replyView" destination="Yzj-c3-a4w" id="nYB-jG-aDM"/>
+                <outlet property="retweetButton" destination="FAu-YC-VWF" id="gUN-ka-Eay"/>
                 <outlet property="retweetCountLabel" destination="vgy-O0-aUy" id="dXV-sX-A7g"/>
                 <outlet property="screennameLabel" destination="1gA-72-tu7" id="QOD-1N-vHr"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -195,7 +197,7 @@
             <connections>
                 <outletCollection property="gestureRecognizers" destination="faE-Sc-Wdv" appends="YES" id="Y48-E9-6xm"/>
             </connections>
-            <point key="canvasLocation" x="356" y="211"/>
+            <point key="canvasLocation" x="139" y="205"/>
         </view>
         <tapGestureRecognizer id="faE-Sc-Wdv">
             <connections>

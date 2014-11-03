@@ -20,6 +20,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *retweetCountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *favouritesCountLabel;
 @property (weak, nonatomic) IBOutlet UITextView *replyView;
+@property (weak, nonatomic) IBOutlet UIButton *retweetButton;
+@property (weak, nonatomic) IBOutlet UIButton *favoriteButton;
 
 @end
 
@@ -53,26 +55,46 @@
 }
 
 - (IBAction)onRetweet:(id)sender {
-    [[TwitterClient sharedInstance] retweetWithParams:self.tweet.identifier completion:^(id response, NSError *error) {
-        //NSLog(@"Got by retweet response %@ %@", response, error);
-        if (error != nil) {
-            NSLog(@"Error in retweeting");
-        } else {
-            NSLog(@"Retweeted successfully");
-        }
-    }];
+    NSLog(@"Is retweeted: %d", self.tweet.retweeted);
+    if (!self.tweet.retweeted) {
+        [[TwitterClient sharedInstance] retweetWithParams:self.tweet.identifier completion:^(id response, NSError *error) {
+            //NSLog(@"Got by retweet response %@ %@", response, error);
+            if (error != nil) {
+                NSLog(@"Error in retweeting");
+            } else {
+                NSLog(@"Retweeted successfully");
+                long retweetCount = self.tweet.retweetCount + 1;
+                self.retweetCountLabel.text = [NSString stringWithFormat:@"%ld", (long)retweetCount];
+                self.tweet.retweeted = YES;
+                UIImage *btnImage = [UIImage imageNamed:@"retweet_on.png"];
+                [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
+            }
+        }];
+    } else {
+        NSLog(@"Already retweeted");
+    }
 }
 
 - (IBAction)onFavourite:(id)sender {
-    NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
-    dictionary[@"id"] = self.tweet.identifier;
-    [[TwitterClient sharedInstance] markFavourites:dictionary completion:^(id response, NSError *error) {
-        if (error != nil) {
-            NSLog(@"Error in Favouriting");
-        } else {
-            NSLog(@"Marked favourites successfully");
-        }
-    }];
+    if (!self.tweet.favourited) {
+        NSMutableDictionary *dictionary = [NSMutableDictionary dictionary];
+        dictionary[@"id"] = self.tweet.identifier;
+        [[TwitterClient sharedInstance] markFavourites:dictionary completion:^(id response, NSError *error) {
+            if (error != nil) {
+                NSLog(@"Error in Favouriting");
+            } else {
+                NSLog(@"Marked favourites successfully");
+                self.tweet.favourited = YES;
+                long favouritedCount = self.tweet.favouritesCount + 1;
+                self.favouritesCountLabel.text = [NSString stringWithFormat:@"%ld", (long)favouritedCount];
+                UIImage *btnImage = [UIImage imageNamed:@"favorite_on.png"];
+                [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
+                
+            }
+        }];
+    } else {
+        NSLog(@"Alraedy a favorite");
+    }
 }
 
 - (void)onHome {
@@ -105,6 +127,16 @@
     
     self.replyView.hidden = YES;
     self.replyView.delegate = self;
+    
+    if (self.tweet.retweeted) {
+        //[self.retweetButton setImage:[UIImage imageNamed:@"retweet_on.png"]];
+        UIImage *btnImage = [UIImage imageNamed:@"retweet_on.png"];
+        [self.retweetButton setImage:btnImage forState:UIControlStateNormal];
+    }
+    if (self.tweet.favourited) {
+        UIImage *btnImage = [UIImage imageNamed:@"favorite_on.png"];
+        [self.favoriteButton setImage:btnImage forState:UIControlStateNormal];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

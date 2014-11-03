@@ -18,6 +18,9 @@
 @property (atomic, assign) NSInteger favouritesCount;
 @property (atomic, strong) NSString *identifier;
 
+@property (atomic, assign) BOOL retweeted;
+@property (atomic, assign) BOOL favourited;
+
 
 - (id) initWithDictionary:(NSDictionary *)dictionary;
 
