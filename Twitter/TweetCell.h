@@ -15,4 +15,6 @@
 
 - (void)setTweet:(Tweet *)tweet;
 
+@property (weak, nonatomic) IBOutlet UIImageView *posterView;
+
 @end

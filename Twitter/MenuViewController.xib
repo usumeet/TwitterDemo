@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuViewController">
+            <connections>
+                <outlet property="nameLabel" destination="Gsx-r9-BKf" id="JGY-Gp-W2C"/>
+                <outlet property="posterView" destination="UgK-bQ-mOS" id="Yv6-ye-f8Z"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="UgK-bQ-mOS">
+                    <rect key="frame" x="18" y="95" width="124" height="95"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="95" id="6Ov-CY-hY0"/>
+                        <constraint firstAttribute="width" constant="124" id="EDS-PS-hdE"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsx-r9-BKf">
+                    <rect key="frame" x="152" y="95" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YRA-SO-PWy">
+                    <rect key="frame" x="10" y="200" width="582" height="2"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="pJa-u9-Mqy"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gH7-Gp-dgJ">
+                    <rect key="frame" x="10" y="246" width="580" height="2"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="2" id="FvD-8T-oUc"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mr8-13-XBc">
+                    <rect key="frame" x="10" y="299" width="582" height="2"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="ckH-Kt-ypy"/>
+                        <constraint firstAttribute="height" constant="2" id="wIK-im-s9r"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Profile" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7HZ-Hf-wGs">
+                    <rect key="frame" x="18" y="210" width="49" height="21"/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="U0E-j3-5Sj" appends="YES" id="199-mc-E8K"/>
+                    </connections>
+                </label>
+                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Timeline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-jb-090">
+                    <rect key="frame" x="18" y="264" width="64" height="21"/>
+                    <gestureRecognizers/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="JD3-gB-vUD" appends="YES" id="uc1-tD-XDp"/>
+                    </connections>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="gH7-Gp-dgJ" firstAttribute="top" secondItem="YRA-SO-PWy" secondAttribute="bottom" constant="44" id="2Z1-FB-qve"/>
+                <constraint firstItem="Mr8-13-XBc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="8YQ-Ib-rc1"/>
+                <constraint firstItem="Mr8-13-XBc" firstAttribute="top" secondItem="gH7-Gp-dgJ" secondAttribute="bottom" constant="51" id="IPf-al-wBr"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Gsx-r9-BKf" secondAttribute="trailing" constant="10" id="L7R-Ac-4Kg"/>
+                <constraint firstAttribute="trailing" secondItem="Mr8-13-XBc" secondAttribute="trailing" constant="8" id="Mgr-SY-2nD"/>
+                <constraint firstAttribute="trailing" secondItem="gH7-Gp-dgJ" secondAttribute="trailing" constant="10" id="RHE-kO-bwK"/>
+                <constraint firstItem="UgK-bQ-mOS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="18" id="eMt-oc-R3g"/>
+                <constraint firstItem="Gsx-r9-BKf" firstAttribute="leading" secondItem="UgK-bQ-mOS" secondAttribute="trailing" constant="10" id="fgH-lS-QVC"/>
+                <constraint firstItem="YRA-SO-PWy" firstAttribute="top" secondItem="UgK-bQ-mOS" secondAttribute="bottom" constant="10" id="kcb-RV-CSN"/>
+                <constraint firstAttribute="trailing" secondItem="YRA-SO-PWy" secondAttribute="trailing" constant="8" id="n5x-sr-VdQ"/>
+                <constraint firstItem="UgK-bQ-mOS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="95" id="qV7-mN-4Z7"/>
+                <constraint firstItem="gH7-Gp-dgJ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="qv2-8c-ujH"/>
+                <constraint firstItem="Gsx-r9-BKf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="95" id="raQ-Sv-JC2"/>
+                <constraint firstItem="YRA-SO-PWy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="veE-9Q-vii"/>
+            </constraints>
+            <point key="canvasLocation" x="695" y="345"/>
+        </view>
+        <tapGestureRecognizer id="U0E-j3-5Sj">
+            <connections>
+                <action selector="onProfileTap:" destination="-1" id="u7I-3a-Tz3"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="JD3-gB-vUD">
+            <connections>
+                <action selector="onTimelineTap:" destination="-1" id="ftU-sv-Me9"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

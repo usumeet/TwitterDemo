@@ -1,0 +1,23 @@
+//
+//  MenuViewController.h
+//  Twitter
+//
+//  Created by Sumeet Ungratwar on 11/8/14.
+//  Copyright (c) 2014 Sumeet Ungratwar. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@protocol LeftPanelViewControllerDelegate <NSObject>
+
+@optional
+- (void)showProfilepage;
+- (void)showTimeline;
+
+@end
+
+@interface MenuViewController : UIViewController
+
+@property (nonatomic, assign) id<LeftPanelViewControllerDelegate> delegate;
+
+@end

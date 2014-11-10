@@ -10,7 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 
 @interface TweetCell()
-@property (weak, nonatomic) IBOutlet UIImageView *posterView;
+
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *screennameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timestampLabel;
@@ -19,6 +19,7 @@
 @end
 
 @implementation TweetCell
+
 
 - (void)awakeFromNib {
     // Initialization code

@@ -14,6 +14,7 @@
 #include "TweetCell.h"
 #import "NewTweetViewController.h"
 #import "TweetViewController.h"
+#import "DummyViewController.h"
 
 @interface TweetsViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -82,6 +83,17 @@
     
 }
 
+- (void)imageInCellTapped:(id)sender {
+    UITapGestureRecognizer *gesture = (UITapGestureRecognizer *) sender;
+    NSLog(@"Tag = %ld", (long)gesture.view.tag);
+
+    long index = (long)gesture.view.tag;
+    DummyViewController *vc = [[DummyViewController alloc] init];
+    Tweet *tweet = self.tweets[index];
+    vc.user = tweet.user;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 #pragma mark - TableView methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -98,6 +110,13 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" forIndexPath:indexPath];
     [cell setTweet:self.tweets[indexPath.row]];
+    
+    cell.posterView.userInteractionEnabled = YES;
+    cell.posterView.tag = indexPath.row;
+    
+    UITapGestureRecognizer *tapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(imageInCellTapped:)];
+    tapped.numberOfTapsRequired = 1;
+    [cell.posterView addGestureRecognizer:tapped];
     return cell;
 }
 
@@ -105,6 +124,10 @@
     TweetViewController *vc = [[TweetViewController alloc] init];
     vc.tweet = self.tweets[indexPath.row];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
 - (void)didReceiveMemoryWarning {

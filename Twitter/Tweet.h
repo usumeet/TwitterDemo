@@ -24,6 +24,8 @@
 
 - (id) initWithDictionary:(NSDictionary *)dictionary;
 
+- (User *) user;
+
 + (NSArray *)tweetsWithArray:(NSArray *)array;
 
 @end

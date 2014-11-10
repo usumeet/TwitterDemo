@@ -8,6 +8,20 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol CenterViewControllerDelegate <NSObject>
+
+@optional
+- (void)movePanelLeft;
+- (void)movePanelRight;
+
+@required
+- (void)movePanelToOriginalPosition;
+
+@end
+
+
 @interface TweetsViewController : UIViewController
+
+@property (nonatomic, assign) id<CenterViewControllerDelegate> delegate;
 
 @end

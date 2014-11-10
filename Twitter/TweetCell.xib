@@ -13,8 +13,9 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrY-ju-lFn">
+                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xrY-ju-lFn">
                         <rect key="frame" x="13" y="18" width="81" height="71"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstAttribute="height" constant="71" id="NEb-98-gbc"/>
                             <constraint firstAttribute="width" constant="81" id="gOY-f4-Sql"/>
@@ -72,7 +73,7 @@
                 <outlet property="screennameLabel" destination="dwH-yJ-3IU" id="eqn-LC-5Lx"/>
                 <outlet property="timestampLabel" destination="sgM-Ge-WKu" id="LUo-0a-LYa"/>
             </connections>
-            <point key="canvasLocation" x="538" y="295"/>
+            <point key="canvasLocation" x="179" y="216"/>
         </tableViewCell>
     </objects>
 </document>
